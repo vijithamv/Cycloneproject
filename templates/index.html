@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>cyclone detection</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body bgcolor=#E3F9A6>
+ <div class="login">
+
+  <center>
+	<h1 style="font-size: 300%;">Cyclone Detection</h1>
+  <h3 style="font-size: 300%;">Name : vijitha Mullasseriyil Vijayan </h3>
+  <h3 style="font-size: 300%;">Number : W9525051 </h3>
+  <h3 style="font-size: 300%;">Mentor : Grace Chang </h3>
+
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+     <h2> Maximum wind </h2>  
+    	<input type="number" name="Maximum Wind" placeholder="Maximum Wind" class="floatLabel" required="required" />
+      <h2> Minimum pressure </h2> 
+        <input type="number" name="Minimum Pressure" placeholder="Minimum Pressure" class="floatLabel" required="required" />
+        <h2> Latitude </h2> 
+		<input name="Latitude" placeholder="Latitude" class="floatLabel" required="required" />
+    <h2> Longitude </h2> 
+		<input name="Longitude" placeholder="Longitude" class="floatLabel" required="required" />
+    <h2> Low Wind North East</h2> 
+        <input type="number" name="Low Wind NE" placeholder="Low Wind NE" class="floatLabel" required="required" />
+        <h2> Low Wind North West</h2> 
+        <input type="number" name="Low Wind NW" placeholder="Low Wind NW" class="floatLabel" required="required" />
+
+        <h2></h2> 
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+<style>  
+
+  body{
+
+    background-image: url(https://thumbnails.production.thenounproject.com/TBrqND7lopHNheA_Hdiotjz1gr4=/fit-in/1000x1000/photos.production.thenounproject.com/photos/D99C9625-9C38-40C6-B7A8-DA3160CF8206.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backface-visibility: inherit;}
+ </style>
+
+    <h1>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+ </h1>
+
+ </div>
+
+</center>
+
+
+</body>
+</html>
